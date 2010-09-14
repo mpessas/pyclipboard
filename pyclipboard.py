@@ -11,7 +11,10 @@ class PyClipboard(object):
     """Class to set and get values from KDE's clipboard."""
 
     def __init__(self):
-        self.bus = dbus.SessionBus()
+        try:
+            self.bus = dbus.SessionBus()
+        except dbus.DBusException:
+            raise ConnectionRefusedError
         self.clipboard = self.bus.get_object('org.kde.klipper', '/klipper')
         self.encoding = sys.getfilesystemencoding()
 
@@ -21,4 +24,9 @@ class PyClipboard(object):
 
     def get_content(self):
         """Get the value from clipboard."""
-        return self.clipboard.getClipboardContents()
+        return unicode(self.clipboard.getClipboardContents())
+
+
+class ConnectionRefusedError(Exception):
+    """Exception raised, when connecting to the session bus is not possible."""
+    pass
