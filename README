@@ -1,0 +1,2 @@
+PyClipboard is a simple module that copies or returns data from KDE's
+clipboard using dbus calls.
