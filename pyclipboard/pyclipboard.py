@@ -7,6 +7,7 @@ import dbus
 
 __version__ = '0.1'
 
+
 class PyClipboard(object):
     """Class to set and get values from KDE's clipboard."""
 

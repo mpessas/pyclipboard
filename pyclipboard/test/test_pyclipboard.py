@@ -9,7 +9,7 @@ class TestPyClipboard(unittest.TestCase):
 
     def setUp(self):
         self.klipper = PyClipboard()
-    
+
     def test_set_contents(self):
         value = u'test value'
         self.klipper.set_content(value)
@@ -22,6 +22,6 @@ class TestPyClipboard(unittest.TestCase):
         val = self.klipper.get_content()
         self.assertEqual(value, val)
 
-        
+
 if __name__ == '__main__':
     unittest.main()
