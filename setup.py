@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup (
     name = "pyclipboard",
-    version = "0.2",
+    version = "0.2.1",
     packages = ["pyclipboard", "pyclipboard.test"],
     author = "Apostolos Bessas",
     author_email = "mpessas@gmail.com",
